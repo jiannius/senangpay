@@ -1,0 +1,39 @@
+{
+    "name": "jiannius/senangpay",
+    "description": "SenangPay SDK Wrapper",
+    "type": "library",
+    "require": {
+        "doctrine/dbal": "^3.6",
+        "symfony/http-client": "^6.0",
+        "laravel/pail": "^1.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jiannius\\Senangpay\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "TJ",
+            "email": "tj@jiannius.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jiannius\\Senangpay\\SenangpayServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": false,
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
