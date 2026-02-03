@@ -34,10 +34,10 @@ class Senangpay
     public function getSettings($key = null)
     {
         $settings = [
-            'merchant_id' => $this->settings['merchant_id'] ?? env('SENANGPAY_MERCHANT_ID'),
-            'secret_key' => $this->settings['secret_key'] ?? env('SENANGPAY_SECRET_KEY'),
+            'merchant_id' => $this->settings['merchant_id'] ?? config('services.senangpay.merchant_id'),
+            'secret_key' => $this->settings['secret_key'] ?? config('services.senangpay.secret_key'),
             'sandbox' => is_bool($this->settings['sandbox']) ? $this->settings['sandbox'] : (
-                is_bool(env('SENANGPAY_SANDBOX')) ? env('SENANGPAY_SANDBOX') : false
+                is_bool(config('services.senangpay.sandbox')) ? config('services.senangpay.sandbox') : false
             ),
         ];
 
