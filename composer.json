@@ -3,12 +3,14 @@
     "description": "SenangPay SDK Wrapper",
     "type": "library",
     "require": {
-        "doctrine/dbal": "^3.6",
-        "symfony/http-client": "^6.0",
+        "php": "^8.3",
+        "illuminate/support": "^13.0",
+        "doctrine/dbal": "^3.6|^4.0",
+        "symfony/http-client": "^7.0|^8.0",
         "laravel/pail": "^1.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^8.0"
+        "orchestra/testbench": "^11.0"
     },
     "license": "MIT",
     "autoload": {
