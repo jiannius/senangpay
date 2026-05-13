@@ -104,6 +104,23 @@ class Senangpay
         return true;
     }
 
+    public function validateRecurringPayload($payload = null) : mixed
+    {
+        $payload = $payload ?? request()->all();
+        $sk = $this->getSettings('secret_key');
+        $recurringId = data_get($payload, 'recurring_id');
+        $type = data_get($payload, 'type');
+        $email = data_get($payload, 'customer_email');
+        $hash = hash_hmac('sha256', $sk.$recurringId.$type.$email, $sk);
+
+        if ($hash !== data_get($payload, 'hash')) {
+            logger('Unable to validate recurring hashing.');
+            return false;
+        }
+
+        return true;
+    }
+
     public function getStatus($payload = null)
     {
         $payload = $payload ?? request()->all();
